@@ -1,0 +1,6 @@
+export Interface Expense {
+    name: string;
+    date: string;
+    source: string; // enum
+    type: string; // enum
+}

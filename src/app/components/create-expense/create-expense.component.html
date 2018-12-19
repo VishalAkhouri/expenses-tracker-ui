@@ -1,3 +1,29 @@
-<p>
-  create-expense works!
-</p>
+<div class="form-component">
+  <section>
+    <header>
+      <h1>Record your expenses</h1>
+    </header>
+
+    <div class="form-section">
+      <form class="form-section-user" [formGroup]="user">
+        <label>
+            <span>name</span>
+            <input type="text" formControlName="name">
+            <div *ngIf="user.get('name').touched && user.get('name').hasError('required')">Enter name</div>
+        </label>
+        
+        <label>
+            <span>date</span>
+            <input type="text" formControlName="date">
+            <div *ngIf="user.get('date').touched && user.get('date').hasError('required')">Enter name</div>
+        </label>
+
+        <div>
+          <button type="button" (click)="handleSubmit()">Submit</button>
+        </div>
+        
+      </form>
+    </div>
+  </section>
+
+</div>
